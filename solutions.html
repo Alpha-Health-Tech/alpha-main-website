@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solutions - Alpha Health Tech</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .solution-card {
+            background: var(--bg-surface);
+            border: var(--border-width) solid rgba(17, 24, 39, 0.08);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-1);
+            padding: var(--space-4);
+            transition: transform var(--transition-base), box-shadow var(--transition-base);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-4);
+        }
+
+        .solution-card:hover,
+        .solution-card:focus-within {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-2);
+        }
+
+        .solution-card__inner {
+            display: grid;
+            gap: var(--space-4);
+        }
+
+        .solution-card__media {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: var(--border-width) solid var(--lines);
+            box-shadow: var(--shadow-1);
+        }
+
+        .solution-card__media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .solution-card__content {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-3);
+        }
+
+        .solution-card__icon,
+        .challenge-card__icon,
+        .rail-card__icon {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        @media (min-width: 64rem) {
+            .solution-card__inner {
+                grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+                align-items: center;
+            }
+
+            .solution-card--reverse .solution-card__media {
+                order: 2;
+            }
+
+            .solution-card--reverse .solution-card__content {
+                order: 1;
+            }
+        }
+
+        .challenge-card {
+            background: var(--bg-surface);
+            border-radius: var(--radius-md);
+            border: var(--border-width) solid var(--lines);
+            box-shadow: var(--shadow-1);
+            padding: var(--space-4);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-3);
+            transition: transform var(--transition-base), box-shadow var(--transition-base);
+        }
+
+        .challenge-card:hover,
+        .challenge-card:focus-within {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-2);
+        }
+
+        .solutions-rail {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-4);
+        }
+
+        .rail-card {
+            background: var(--bg-surface);
+            border-radius: var(--radius-md);
+            border: var(--border-width) solid rgba(17, 24, 39, 0.08);
+            box-shadow: var(--shadow-1);
+            padding: var(--space-4);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-3);
+        }
+
+        .rail-card__media {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: var(--border-width) solid var(--lines);
+            box-shadow: var(--shadow-1);
+        }
+
+        .rail-card__media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+    <link rel="icon" href="assets/emblem-light-background.png" type="image/png">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <div class="site-wrapper">
+        <header class="site-header container">
+            <div class="site-header__bar">
+                <a class="site-brand" href="index.html">
+                    <img src="assets/logo-light-background.png" alt="Alpha Health Tech logo" class="site-brand__mark">
+                </a>
+                <nav class="site-nav" id="nav-menu" aria-label="Primary">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="solutions.html" class="nav-link active" aria-label="IT Services">IT Services</a>
+                    <a href="marketing.html" class="nav-link">Marketing</a>
+                    <a href="portfolio.html" class="nav-link">Portfolio</a>
+                </nav>
+                <div class="site-header__actions">
+                    <a href="contact.html" class="btn btn-primary">Get Started</a>
+                    <button type="button" class="site-nav__toggle hamburger" id="hamburger" aria-label="Toggle navigation">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main class="site-main" id="main-content">
+            <section class="section section--tight">
+                <div class="container">
+                    <div class="hero">
+                        <div class="hero__content">
+                            <span class="chip">Solutions for modern pharmacies</span>
+                            <h1 class="text-balance">Healthcare &amp; Pharmacy Solutions</h1>
+                            <p class="lead text-pretty">Empowering pharmacies with innovative technology.</p>
+                            <p class="text-pretty">Partner with Alpha Health Tech to streamline operations, improve patient engagement, and stay ahead of regulatory requirements.</p>
+                            <div class="hero__actions">
+                                <a href="contact.html" class="btn btn-primary">Talk to Our Team</a>
+                                <a href="#solutions" class="btn btn-secondary">View All Solutions</a>
+                            </div>
+                        </div>
+                        <figure class="hero__media border bg-surface shadow-2">
+                            <img src="images/hero-solutions.jpeg" alt="Woman in lab coat in modern setting" loading="lazy">
+                        </figure>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="solutions">
+                <div class="container">
+                    <div class="stack stack--loose">
+                        <div class="stack stack--tight">
+                            <span class="chip">Our Platforms</span>
+                            <h2 class="text-balance">Comprehensive Pharmacy Technology</h2>
+                            <p class="text-muted text-pretty">Purpose-built platforms that handle every aspect of modern pharmacy operations.</p>
+                        </div>
+                        <div class="stack stack--loose">
+                                <article class="solution-card">
+                                    <div class="solution-card__inner">
+                                        <figure class="solution-card__media">
+                                            <img src="images/pharmacy-mgmt.jpeg" alt="Medicine bottles and pills" loading="lazy">
+                                        </figure>
+                                        <div class="solution-card__content">
+                                            <div class="stack stack--tight">
+                                                <h3>Pharmacy Management</h3>
+                                                <p>Comprehensive solutions that handle everything from prescription processing to inventory control. Designed to improve accuracy and enhance efficiency.</p>
+                                            </div>
+                                            <ul class="stack stack--tight" role="list">
+                                                <li>Prescription processing and management</li>
+                                                <li>Inventory tracking and automated reordering</li>
+                                                <li>Patient profile management</li>
+                                                <li>Drug interaction checking</li>
+                                                <li>Reporting and analytics</li>
+                                            </ul>
+                                            <a href="contact.html" class="btn btn-primary">Learn More</a>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <article class="solution-card solution-card--reverse">
+                                    <div class="solution-card__inner">
+                                        <figure class="solution-card__media">
+                                            <img src="images/telepharmacy.jpeg" alt="Healthcare professional using phone" loading="lazy">
+                                        </figure>
+                                        <div class="solution-card__content">
+                                            <div class="stack stack--tight">
+                                                <h3>Telepharmacy</h3>
+                                                <p>Connect with patients remotely through secure platforms. Provide consultations, prescription services, and counseling from anywhere.</p>
+                                            </div>
+                                            <ul class="stack stack--tight" role="list">
+                                                <li>Secure video consultations</li>
+                                                <li>Remote prescription services</li>
+                                                <li>Medication therapy management</li>
+                                                <li>Patient education and counseling</li>
+                                            </ul>
+                                            <a href="contact.html" class="btn btn-secondary">Learn More</a>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <article class="solution-card">
+                                    <div class="solution-card__inner">
+                                        <figure class="solution-card__media">
+                                            <img src="images/patient-engagement.jpeg" alt="Nurse with smartphone" loading="lazy">
+                                        </figure>
+                                        <div class="solution-card__content">
+                                            <div class="stack stack--tight">
+                                                <h3>Patient Engagement</h3>
+                                                <p>Secure access to health information, appointment scheduling, and medication reminders. Build stronger relationships with patients.</p>
+                                            </div>
+                                            <ul class="stack stack--tight" role="list">
+                                                <li>Secure patient portal</li>
+                                                <li>Appointment scheduling</li>
+                                                <li>Medication reminders</li>
+                                                <li>Health information access</li>
+                                            </ul>
+                                            <a href="contact.html" class="btn btn-secondary">Learn More</a>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <article class="solution-card solution-card--reverse">
+                                    <div class="solution-card__inner">
+                                        <figure class="solution-card__media">
+                                            <img src="images/digital-marketing.jpeg" alt="Data analytics dashboard" loading="lazy">
+                                        </figure>
+                                        <div class="solution-card__content">
+                                            <div class="stack stack--tight">
+                                                <h3>Data Analytics</h3>
+                                                <p>Valuable insights into pharmacy performance and patient demographics. Make data-driven decisions to optimise operations.</p>
+                                            </div>
+                                            <ul class="stack stack--tight" role="list">
+                                                <li>Performance dashboards</li>
+                                                <li>Patient analytics</li>
+                                                <li>Inventory optimization</li>
+                                                <li>Financial reporting</li>
+                                            </ul>
+                                            <a href="contact.html" class="btn btn-secondary">Learn More</a>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <article class="solution-card">
+                                    <div class="solution-card__inner">
+                                        <figure class="solution-card__media">
+                                            <img src="images/services-home.jpeg" alt="Cloud infrastructure" loading="lazy">
+                                        </figure>
+                                        <div class="solution-card__content">
+                                            <div class="stack stack--tight">
+                                                <h3>Cloud Solutions</h3>
+                                                <p>GDPR-compliant infrastructure for secure data management. Ensure patient privacy while maintaining accessibility.</p>
+                                            </div>
+                                            <ul class="stack stack--tight" role="list">
+                                                <li>Secure data storage</li>
+                                                <li>Automated backups</li>
+                                                <li>Disaster recovery</li>
+                                                <li>Multi-location access</li>
+                                            </ul>
+                                            <a href="contact.html" class="btn btn-secondary">Learn More</a>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <article class="solution-card solution-card--reverse">
+                                    <div class="solution-card__inner">
+                                        <figure class="solution-card__media">
+                                            <img src="images/features-home.jpeg" alt="Workflow automation" loading="lazy">
+                                        </figure>
+                                        <div class="solution-card__content">
+                                            <div class="stack stack--tight">
+                                                <h3>Workflow Automation</h3>
+                                                <p>Automate routine tasks and streamline operations. Reduce manual work and focus on patient care.</p>
+                                            </div>
+                                            <ul class="stack stack--tight" role="list">
+                                                <li>Automated prescription processing</li>
+                                                <li>Insurance claim management</li>
+                                                <li>Inventory alerts</li>
+                                                <li>Quality assurance checks</li>
+                                            </ul>
+                                            <a href="contact.html" class="btn btn-secondary">Learn More</a>
+                                        </div>
+                                    </div>
+                                </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <div class="stack stack--loose">
+                        <div class="stack stack--tight">
+                            <span class="chip">Challenges We Solve</span>
+                            <h2 class="text-balance">Addressing Challenges</h2>
+                            <p class="text-muted text-pretty">Pharmacies face unique challenges in today's landscape. We help you overcome them.</p>
+                        </div>
+                        <div class="challenges-grid">
+                            <article class="challenge-card">
+                                <div class="stack stack--tight">
+                                    <h3>Increasing Competition</h3>
+                                    <p>Stand out with innovative digital solutions that enhance visibility and patient experience.</p>
+                                </div>
+                            </article>
+                            <article class="challenge-card">
+                                <div class="stack stack--tight">
+                                    <h3>Patient Management</h3>
+                                    <p>Efficiently manage bookings, prescriptions, and communications with integrated tools.</p>
+                                </div>
+                            </article>
+                            <article class="challenge-card">
+                                <div class="stack stack--tight">
+                                    <h3>Digital Transformation</h3>
+                                    <p>Embrace the digital age with modern solutions that streamline operations.</p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <div class="stack stack--loose">
+                        <div class="stack stack--tight">
+                            <span class="chip">Expert Support</span>
+                            <h2 class="text-balance">Implementation & Adoption</h2>
+                            <p class="text-muted text-pretty">Partner with our team for seamless deployment and ongoing success.</p>
+                        </div>
+                        <div class="contact-info-grid">
+                            <article class="rail-card">
+                                <figure class="rail-card__media">
+                                    <img src="images/team-culture.jpeg" alt="Alpha Health Tech consultants collaborating" loading="lazy">
+                                </figure>
+                                <div class="stack stack--tight">
+                                    <h3 class="m-0">Collaborate with Our Team</h3>
+                                    <p class="text-muted text-pretty">Work directly with pharmacy technology experts to tailor implementation plans around your workflows.</p>
+                                </div>
+                                <ul class="stack stack--tight" role="list">
+                                    <li>Dedicated solution architects</li>
+                                    <li>Clinical & operational insights</li>
+                                    <li>Co-planned deployment milestones</li>
+                                </ul>
+                                <a href="contact.html" class="btn btn-secondary">Plan a Workshop</a>
+                            </article>
+                            <article class="rail-card">
+                                <figure class="rail-card__media">
+                                    <img src="images/hero-contact.jpeg" alt="Pharmacy team reviewing rollout plans" loading="lazy">
+                                </figure>
+                                <div class="stack stack--tight">
+                                    <h3 class="m-0">Rollout & Adoption Support</h3>
+                                    <p class="text-muted text-pretty">Ensure every location is ready with structured onboarding, training, and performance monitoring.</p>
+                                </div>
+                                <ul class="stack stack--tight" role="list">
+                                    <li>Implementation playbooks</li>
+                                    <li>Staff enablement & training</li>
+                                    <li>Performance monitoring & optimization</li>
+                                </ul>
+                                <a href="contact.html" class="btn btn-secondary">View Services</a>
+                            </article>
+                            <article class="rail-card">
+                                <figure class="rail-card__media">
+                                    <img src="images/hero-about.jpeg" alt="Consultants analyzing performance dashboard" loading="lazy">
+                                </figure>
+                                <div class="stack stack--tight">
+                                    <h3 class="m-0">Continuous Optimisation</h3>
+                                    <p class="text-muted text-pretty">Maintain momentum with ongoing optimisation, compliance reviews, and proactive enhancements across your network.</p>
+                                </div>
+                                <ul class="stack stack--tight" role="list">
+                                    <li>Quarterly optimisation reviews</li>
+                                    <li>Regulatory compliance audits</li>
+                                    <li>Proactive feature roadmap updates</li>
+                                </ul>
+                                <a href="contact.html" class="btn btn-secondary">Schedule Health Check</a>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section section--tight section--cta">
+                <div class="container container--cta">
+                    <div class="cta">
+                        <div class="cta__content">
+                            <span class="chip">Partner with healthcare innovators</span>
+                            <h2 class="text-balance">Ready to Transform Your Pharmacy?</h2>
+                            <p class="text-pretty">Join leading pharmacies who trust us to power their digital transformation.</p>
+                            <p class="text-pretty">Let us help you reach more patients and build a stronger presence in your community.</p>
+                            <div class="cluster">
+                                <a href="contact.html" class="btn btn-primary">Get Started</a>
+                            </div>
+                        </div>
+                        <div class="cta__media">
+                            <img src="images/cta-home.jpeg" alt="Team collaboration" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer container">
+            <div class="site-footer__grid">
+                <div class="stack stack--tight">
+                    <div class="inline items-center">
+                        <img src="assets/logo-light-background.png" alt="Alpha Health Tech logo" class="site-brand__mark">
+                        
+                    </div>
+                    <p>Empowering healthcare providers with innovative technology solutions since 2013.</p>
+                </div>
+                <div class="stack stack--tight">
+                    <h4>Quick Links</h4>
+                    <ul class="site-footer__link-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="solutions.html">IT Services</a></li>
+                        <li><a href="marketing.html">Marketing</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="stack stack--tight">
+                    <h4>Contact Info</h4>
+                    <p>Let's connect and discuss how we can help transform your healthcare organization.</p>
+                    <a href="contact.html" class="btn btn-secondary">Get In Touch</a>
+                </div>
+            </div>
+            <div class="site-footer__bottom">
+                <p>&copy; 2025 Alpha Health Tech. All rights reserved.</p>
+                <p class="text-small image-credits">Images by photographers on <a href="https://www.pexels.com" target="_blank" rel="noopener">Pexels</a></p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

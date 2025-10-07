@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketing Services - Alpha Health Tech</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .marketing-card {
+            border-color: var(--lines);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-4);
+            transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+        }
+
+        .marketing-card:focus-within,
+        .marketing-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-2);
+            border-color: rgba(17, 24, 39, 0.16);
+        }
+
+        .benefit-card {
+            border-color: var(--lines);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-3);
+            transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+        }
+
+        .benefit-card:focus-within,
+        .benefit-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-2);
+            border-color: rgba(17, 24, 39, 0.16);
+        }
+
+        .icon-pill {
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: var(--radius-sm);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-subtle);
+            border: var(--border-width) solid rgba(17, 24, 39, 0.12);
+            font-size: 0.95rem;
+        }
+
+        .feature-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-2);
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-2);
+        }
+
+        .hero__media-card {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: var(--border-width) solid var(--lines);
+            box-shadow: var(--shadow-2);
+        }
+
+        .service-highlight {
+            background: var(--bg-surface);
+            border-radius: var(--radius-lg);
+            border: var(--border-width) solid var(--lines);
+            box-shadow: var(--shadow-1);
+            padding: var(--space-4);
+            display: grid;
+            gap: var(--space-4);
+            transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+        }
+
+        .service-highlight:focus-within,
+        .service-highlight:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-2);
+            border-color: rgba(17, 24, 39, 0.16);
+        }
+
+        .service-highlight__content {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-3);
+        }
+
+        .service-highlight__media {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: var(--border-width) solid var(--lines);
+            box-shadow: var(--shadow-1);
+        }
+
+        @media (min-width: 64rem) {
+            .service-highlight {
+                grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+                align-items: center;
+            }
+
+            .service-highlight--reverse .service-highlight__media {
+                order: 2;
+            }
+
+            .service-highlight--reverse .service-highlight__content {
+                order: 1;
+            }
+        }
+    </style>
+    <link rel="icon" href="assets/emblem-light-background.png" type="image/png">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <div class="site-wrapper">
+        <header class="site-header container">
+            <div class="site-header__bar">
+                <a class="site-brand" href="index.html">
+                    <img src="assets/logo-light-background.png" alt="Alpha Health Tech logo" class="site-brand__mark">
+                </a>
+                <nav class="site-nav" id="nav-menu" aria-label="Primary">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="solutions.html" class="nav-link" aria-label="IT Services">IT Services</a>
+                    <a href="marketing.html" class="nav-link active">Marketing</a>
+                    <a href="portfolio.html" class="nav-link">Portfolio</a>
+                </nav>
+                <div class="site-header__actions">
+                    <a href="contact.html" class="btn btn-primary">Get Started</a>
+                    <button type="button" class="site-nav__toggle hamburger" id="hamburger" aria-label="Toggle navigation">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main class="site-main" id="main-content">
+            <section class="section section--tight">
+                <div class="container">
+                    <div class="hero">
+                        <div class="hero__content stack stack--loose">
+                            <span class="chip">Growth Marketing for Pharmacies</span>
+                            <h1 class="text-balance">Marketing Services</h1>
+                            <p class="lead text-pretty">Amplify your pharmacy's presence and connect with more patients through strategic digital marketing.</p>
+                            <p class="text-pretty">We deliver customised marketing campaigns designed specifically for community pharmacies, combining healthcare expertise with data-driven insights. Our approach focuses on expanding your patient base, strengthening community trust, and driving measurable growth in prescription volume through transparent analytics that translate marketing efforts into tangible patient outcomes.</p>
+                            <div class="hero__actions">
+                                <a href="contact.html" class="btn btn-primary">Request a Strategy Call</a>
+                                <a href="#offerings" class="btn btn-secondary">Discover Services</a>
+                            </div>
+                        </div>
+                        <figure class="hero__media hero__media-card">
+                            <img src="images/hero-marketing.jpeg" alt="Scientist using microscope" loading="lazy">
+                        </figure>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="offerings">
+                <div class="container">
+                    <div class="stack stack--loose">
+                        <div class="stack stack--tight">
+                            <h2 class="text-balance">Transform Your Healthcare Marketing</h2>
+                            <p class="text-muted text-pretty">Integrated marketing services tailored for pharmacies and healthcare organizations.</p>
+                        </div>
+                        <div class="marketing-grid">
+                            <article class="card marketing-card">
+                                <div class="media-card__media rounded-lg border shadow-1">
+                                    <img src="images/digital-marketing.jpeg" alt="Medicine bottles organized" loading="lazy">
+                                </div>
+                                <div class="stack stack--tight">
+                                    <h3 class="text-balance">Digital Marketing</h3>
+                                    <p>Reach more patients in your community with targeted online advertising and social media campaigns. We create customised strategies that drive foot traffic and increase prescription volume.</p>
+                                </div>
+                                <ul class="feature-list" role="list">
+                                    <li>Google Ads campaigns optimised for healthcare</li>
+                                    <li>Social media marketing across major platforms</li>
+                                    <li>Local SEO optimization</li>
+                                    <li>Community outreach programs</li>
+                                </ul>
+                                <a href="contact.html" class="btn btn-primary">Get Started</a>
+                            </article>
+                            <article class="card marketing-card">
+                                <div class="media-card__media rounded-lg border shadow-1">
+                                    <img src="images/content-marketing.jpeg" alt="Modern dental/medical equipment" loading="lazy">
+                                </div>
+                                <div class="stack stack--tight">
+                                    <h3 class="text-balance">Content Marketing</h3>
+                                    <p>Establish your pharmacy as a trusted source of health information with engaging blog posts, articles, and videos. Build authority and educate your patients on important health topics.</p>
+                                </div>
+                                <ul class="feature-list" role="list">
+                                    <li>Professional health blog content</li>
+                                    <li>Educational video production</li>
+                                    <li>Patient newsletters</li>
+                                    <li>Medication guides and resources</li>
+                                </ul>
+                                <a href="contact.html" class="btn btn-primary">Get Started</a>
+                            </article>
+                            <article class="card marketing-card">
+                                <div class="media-card__media rounded-lg border shadow-1">
+                                    <img src="images/pharmacy-mgmt.jpeg" alt="SEO optimization" loading="lazy">
+                                </div>
+                                <div class="stack stack--tight">
+                                    <h3 class="text-balance">SEO & Local Search</h3>
+                                    <p>Improve your search engine ranking and make it easier for patients to find you online. Our healthcare-focused SEO strategies ensure you appear when patients search for pharmacy services.</p>
+                                </div>
+                                <ul class="feature-list" role="list">
+                                    <li>Local search optimization</li>
+                                    <li>Healthcare keyword research and targeting</li>
+                                    <li>Google My Business setup and optimization</li>
+                                    <li>Review management and generation</li>
+                                </ul>
+                                <a href="contact.html" class="btn btn-primary">Get Started</a>
+                            </article>
+                            <article class="card marketing-card">
+                                <div class="media-card__media rounded-lg border shadow-1">
+                                    <img src="images/patient-engagement.jpeg" alt="Reputation management" loading="lazy">
+                                </div>
+                                <div class="stack stack--tight">
+                                    <h3 class="text-balance">Reputation Management</h3>
+                                    <p>Build trust and credibility with positive patient reviews and testimonials. We help you manage your online reputation and showcase your pharmacy's excellent patient care.</p>
+                                </div>
+                                <ul class="feature-list" role="list">
+                                    <li>Automated review collection systems</li>
+                                    <li>Real-time reputation monitoring</li>
+                                    <li>Testimonial showcases for your website</li>
+                                    <li>Crisis management and response strategies</li>
+                                </ul>
+                                <a href="contact.html" class="btn btn-primary">Get Started</a>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <div class="stack stack--loose">
+                        <div class="stack stack--tight">
+                            <h2>Why Marketing Matters</h2>
+                            <p class="text-muted text-pretty">Effective marketing helps you reach more patients and grow your pharmacy.</p>
+                        </div>
+                        <div class="benefits-grid">
+                            <article class="card card--subtle benefit-card stack stack--tight">
+                                <h3 class="text-balance">Patient Acquisition</h3>
+                                <p>Attract new patients with targeted campaigns that highlight your services and expertise.</p>
+                            </article>
+                            <article class="card card--subtle benefit-card stack stack--tight">
+                                <h3 class="text-balance">Build Authority</h3>
+                                <p>Establish your pharmacy as a trusted healthcare resource through educational content.</p>
+                            </article>
+                            <article class="card card--subtle benefit-card stack stack--tight">
+                                <h3 class="text-balance">Expand Reach</h3>
+                                <p>Connect with patients beyond your neighborhood through effective online strategies.</p>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <div class="stack stack--loose">
+                        <div class="stack stack--tight">
+                            <span class="chip">How We Deliver</span>
+                            <h2 class="text-balance">Campaigns Built for Healthcare Impact</h2>
+                            <p class="text-muted text-pretty">Every engagement pairs specialised marketing expertise with pharmacy operations knowledge.</p>
+                        </div>
+                        <div class="stack stack--loose">
+                            <article class="service-highlight">
+                                <div class="service-highlight__content">
+                                    <div class="stack stack--tight">
+                                        <h3 class="text-balance">Integrated Campaign Strategy</h3>
+                                        <p>Reach more patients in your community with targeted online advertising and social media campaigns that honor compliance requirements.</p>
+                                    </div>
+                                    <ul class="feature-list" role="list">
+                                        <li>Google Ads campaigns optimised for healthcare</li>
+                                        <li>Social media marketing across major platforms</li>
+                                        <li>Community outreach programs that increase prescription volume</li>
+                                    </ul>
+                                    <a href="contact.html" class="btn btn-secondary">Request Campaign Plan</a>
+                                </div>
+                                <figure class="service-highlight__media">
+                                    <img src="images/digital-marketing.jpeg" alt="Marketing strategist optimising digital campaign" loading="lazy">
+                                </figure>
+                            </article>
+                            <article class="service-highlight service-highlight--reverse">
+                                <div class="service-highlight__content">
+                                    <div class="stack stack--tight">
+                                        <h3 class="text-balance">Reputation & Analytics Programs</h3>
+                                        <p>Build trust and credibility with ongoing review management and transparent reporting dashboards.</p>
+                                    </div>
+                                    <ul class="feature-list" role="list">
+                                        <li>Automated review collection systems</li>
+                                        <li>Real-time reputation monitoring</li>
+                                        <li>Testimonial showcases for your website</li>
+                                    </ul>
+                                    <a href="contact.html" class="btn btn-secondary">Explore Reporting Options</a>
+                                </div>
+                                <figure class="service-highlight__media">
+                                    <img src="images/patient-engagement.jpeg" alt="Pharmacist supporting patient engagement online" loading="lazy">
+                                </figure>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section section--tight section--cta">
+                <div class="container container--cta">
+                    <div class="cta">
+                        <div class="cta__content">
+                            <span class="chip">Partner with Alpha Health Tech</span>
+                            <h2 class="text-balance">Ready to Grow Your Pharmacy?</h2>
+                            <p class="text-pretty">Let us help you reach more patients and build a stronger presence in your community.</p>
+                            <div class="cluster">
+                                <a href="contact.html" class="btn btn-primary">Get Started</a>
+                                <a href="#offerings" class="btn btn-secondary">Review Marketing Services</a>
+                            </div>
+                        </div>
+                        <div class="cta__media">
+                            <img src="images/cta-home.jpeg" alt="Healthcare team collaboration" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer container">
+            <div class="site-footer__grid">
+                <div class="stack stack--tight">
+                    <div class="inline items-center">
+                        <img src="assets/logo-light-background.png" alt="Alpha Health Tech logo" class="site-brand__mark">
+                        
+                    </div>
+                    <p>Empowering healthcare providers with innovative technology solutions since 2013.</p>
+                </div>
+                <div class="stack stack--tight">
+                    <h4>Quick Links</h4>
+                    <ul class="site-footer__link-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="solutions.html">IT Services</a></li>
+                        <li><a href="marketing.html">Marketing</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="stack stack--tight">
+                    <h4>Contact Info</h4>
+                    <p>Let's connect and discuss how we can help transform your healthcare organization.</p>
+                    <a href="contact.html" class="btn btn-secondary">Get In Touch</a>
+                </div>
+            </div>
+            <div class="site-footer__bottom">
+                <p>&copy; 2025 Alpha Health Tech. All rights reserved.</p>
+                <p class="text-small image-credits">Images by photographers on <a href="https://www.pexels.com" target="_blank" rel="noopener">Pexels</a></p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

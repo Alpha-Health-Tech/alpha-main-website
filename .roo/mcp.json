@@ -1,0 +1,33 @@
+{
+  "mcpServers": {
+    "puppeteer": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-puppeteer"
+      ],
+      "alwaysAllow": [
+        "puppeteer_navigate",
+        "puppeteer_screenshot",
+        "puppeteer_evaluate"
+      ]
+    },
+    "pexels-mcp-server": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@smithery/cli@latest",
+        "run",
+        "@CaullenOmdahl/pexels-mcp-server",
+        "--key",
+        "e1d6298d-2369-41a7-a258-bdc9a7e72abf",
+        "--profile",
+        "special-orangutan-3mEhxt"
+      ],
+      "alwaysAllow": [
+        "searchPhotos",
+        "downloadPhoto"
+      ]
+    }
+  }
+}

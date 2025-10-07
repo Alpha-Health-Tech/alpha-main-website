@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpha Health Tech - Empowering Healthcare Through Innovation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/emblem-light-background.png" type="image/png">
+    <style>
+        .hero-grid {
+            display: grid;
+            gap: var(--space-5);
+            align-items: center;
+        }
+
+        .hero-grid__content {
+            grid-column: span 12;
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-4);
+        }
+
+        .hero-grid__paragraph {
+            max-width: 28.75rem;
+        }
+
+        .hero-grid__cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-3);
+        }
+
+        .hero-grid__media {
+            grid-column: span 12;
+        }
+
+        @media (min-width: 64rem) {
+            .hero-grid {
+                grid-template-columns: repeat(12, minmax(0, 1fr));
+            }
+
+            .hero-grid__content {
+                grid-column: span 5;
+            }
+
+            .hero-grid__media {
+                grid-column: span 7;
+            }
+        }
+
+        .hero-proof {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: var(--space-3);
+        }
+
+        .hero-proof__avatars {
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-proof__avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: var(--radius-pill);
+            object-fit: cover;
+            border: 2px solid var(--bg-surface);
+            box-shadow: var(--shadow-1);
+            margin-inline-start: -12px;
+        }
+
+        .hero-proof__avatar:first-child {
+            margin-inline-start: 0;
+        }
+
+        .hero-proof__text {
+            font-weight: var(--font-weight-medium);
+        }
+
+        .hero-card {
+            position: relative;
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(17, 24, 39, 0.08);
+            background: var(--bg-surface);
+            box-shadow: var(--shadow-2);
+            padding: var(--space-4);
+            overflow: hidden;
+        }
+
+        .hero-card img {
+            width: 100%;
+            height: auto;
+            border-radius: calc(var(--radius-md) * 1.1);
+        }
+
+        .hero-card__play {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 64px;
+            height: 64px;
+            border-radius: var(--radius-pill);
+            background: rgba(17, 24, 39, 0.86);
+            color: var(--text-inverse);
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            box-shadow: var(--shadow-2);
+            font-size: 1.35rem;
+            transition: transform var(--transition-base), box-shadow var(--transition-base);
+        }
+
+        .hero-card__play:hover,
+        .hero-card__play:focus-visible {
+            transform: translate(-50%, -50%) scale(1.05);
+            box-shadow: 0 12px 30px rgba(17, 24, 39, 0.24);
+        }
+
+        .stats-section .container {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-4);
+        }
+
+        .stats-row {
+            display: grid;
+            gap: var(--space-4);
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        }
+
+        .stat-card {
+            background: var(--bg-surface);
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(17, 24, 39, 0.08);
+            box-shadow: var(--shadow-1);
+            padding: var(--space-4);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--space-1);
+            text-align: center;
+        }
+
+        .stat-card strong {
+            font-size: clamp(1.9rem, 1.6rem + 0.8vw, 2.25rem);
+            font-weight: var(--font-weight-bold);
+            letter-spacing: var(--letter-spacing-tight);
+            color: var(--text-strong);
+        }
+
+        .stat-card span {
+            font-weight: var(--font-weight-medium);
+            color: var(--text-subtle);
+        }
+
+        .why-grid {
+            display: grid;
+            gap: var(--space-4);
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        }
+
+        .why-card {
+            background: var(--bg-subtle);
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(17, 24, 39, 0.08);
+            box-shadow: var(--shadow-1);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-3);
+            height: 100%;
+            padding: var(--space-4);
+        }
+
+        .why-card__media {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            aspect-ratio: 16 / 10;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4);
+        }
+
+        .why-card__media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .why-card__body {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-2);
+        }
+
+        .why-card__chip {
+            align-self: flex-start;
+        }
+
+        .services-section .stack--tight {
+            align-items: center;
+            text-align: center;
+        }
+
+        .services-grid {
+            display: grid;
+            gap: var(--space-4);
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+
+        .service-tile {
+            background: var(--bg-subtle);
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(17, 24, 39, 0.1);
+            padding: var(--space-4);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-3);
+            box-shadow: var(--shadow-1);
+            transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+        }
+
+        .service-tile:hover,
+        .service-tile:focus-within {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-2);
+            border-color: rgba(17, 24, 39, 0.2);
+        }
+
+        .service-mockup {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-2);
+            background: linear-gradient(135deg, rgba(17, 24, 39, 0.05), rgba(17, 24, 39, 0.02));
+            border-radius: var(--radius-md);
+            padding: var(--space-3);
+            border: 1px dashed rgba(17, 24, 39, 0.14);
+        }
+
+        .service-mockup__frame {
+            position: relative;
+            border-radius: var(--radius-md);
+            background: rgba(255, 255, 255, 0.6);
+            overflow: hidden;
+            height: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .service-mockup__frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: saturate(0.2);
+            opacity: 0.7;
+            mix-blend-mode: multiply;
+        }
+
+        .service-mockup__chips {
+            display: flex;
+            gap: var(--space-2);
+            flex-wrap: wrap;
+        }
+
+        .service-mockup__chip {
+            flex: 1 0 64px;
+            height: 12px;
+            border-radius: var(--radius-pill);
+            background: rgba(17, 24, 39, 0.12);
+        }
+
+        .service-tile__body {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-2);
+            text-align: left;
+        }
+
+        .service-tile__body .btn {
+            align-self: flex-start;
+        }
+
+        .projects-section .stack--tight {
+            text-align: center;
+            align-items: center;
+        }
+
+        .projects-grid {
+            display: grid;
+            gap: var(--space-4);
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        }
+
+        .project-card {
+            background: var(--bg-surface);
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(17, 24, 39, 0.08);
+            box-shadow: var(--shadow-1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-card__body {
+            padding: var(--space-4);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-2);
+        }
+
+        .project-card__title {
+            font-size: var(--font-size-h3);
+            font-weight: var(--font-weight-semibold);
+            margin: 0;
+        }
+
+        .project-card__caption {
+            color: var(--text-subtle);
+        }
+    </style>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <div class="site-wrapper">
+        <header class="site-header container">
+            <div class="site-header__bar">
+                <a class="site-brand" href="index.html">
+                    <img src="assets/logo-light-background.png" alt="Alpha Health Tech logo" class="site-brand__mark">
+                </a>
+                <nav class="site-nav" id="nav-menu" aria-label="Primary">
+                    <a href="index.html" class="nav-link active">Home</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="solutions.html" class="nav-link" aria-label="IT Services">IT Services</a>
+                    <a href="marketing.html" class="nav-link">Marketing</a>
+                    <a href="portfolio.html" class="nav-link">Portfolio</a>
+                </nav>
+                <div class="site-header__actions">
+                    <a href="contact.html" class="btn btn-primary">Get Started</a>
+                    <button type="button" class="site-nav__toggle hamburger" id="hamburger" aria-label="Toggle navigation">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main class="site-main" id="main-content">
+            <section class="section section--tight">
+                <div class="container">
+                    <div class="hero hero-grid">
+                        <div class="hero-grid__content">
+                            <h1 class="text-balance">Crafting Digital<br>Excellence with<br>Creative Ingenuity.</h1>
+                            <p class="lead text-pretty hero-grid__paragraph">Transforming pharmacy operations with cutting-edge technology solutions that blend strategic design, compliant delivery, and measurable outcomes.</p>
+                            <div class="hero-grid__cta">
+                                <a href="contact.html" class="btn btn-primary">Let’s Talk</a>
+                                <a href="solutions.html" class="btn btn-secondary hero-grid__cta-secondary">View Portfolio</a>
+                            </div>
+                            <div class="hero-proof">
+                                <div class="hero-proof__avatars" aria-hidden="true">
+                                    <img src="images/team-culture.jpeg" alt="" class="hero-proof__avatar" loading="lazy">
+                                    <img src="images/hero-about.jpeg" alt="" class="hero-proof__avatar" loading="lazy">
+                                    <img src="images/patient-engagement.jpeg" alt="" class="hero-proof__avatar" loading="lazy">
+                                    <img src="images/hero-solutions.jpeg" alt="" class="hero-proof__avatar" loading="lazy">
+                                </div>
+                                <p class="text-muted hero-proof__text">100+ Positive Reviews</p>
+                            </div>
+                        </div>
+                        <figure class="hero-card hero-grid__media">
+                            <img src="images/hero-home.jpeg" alt="Female scientist in modern laboratory" loading="lazy">
+                            <button type="button" class="hero-card__play" aria-label="Play studio reel">▶</button>
+                        </figure>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section section--tight stats-section">
+                <div class="container container--surface">
+                    <div class="stats-row">
+                        <article class="stat-card">
+                            <strong>120+</strong>
+                            <span>Healthcare Clients</span>
+                        </article>
+                        <article class="stat-card">
+                            <strong>100%</strong>
+                            <span>Five-Star Reviews</span>
+                        </article>
+                        <article class="stat-card">
+                            <strong>12+</strong>
+                            <span>Years of Experience</span>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <div class="stack stack--loose">
+                        <div class="stack stack--tight text-center">
+                            <h2 class="text-balance">Why Choose Us</h2>
+                            <p class="text-muted text-pretty">Deep healthcare expertise, pharmacy-focused solutions, secure platforms, and innovative technology set us apart.</p>
+                        </div>
+                        <div class="why-grid">
+                            <article class="card why-card">
+                                <div class="why-card__media">
+                                    <img src="images/features-home.jpeg" alt="Doctor doing online consultation" loading="lazy">
+                                </div>
+                                <div class="why-card__body">
+                                    <h3>Healthcare Expertise</h3>
+                                    <p>Deep understanding of pharmacy operations and healthcare workflows to deliver solutions that make a difference.</p>
+                                </div>
+                            </article>
+                            <article class="card why-card">
+                                <div class="why-card__media">
+                                    <img src="images/services-home.jpeg" alt="Healthcare professional with tablet" loading="lazy">
+                                </div>
+                                <div class="why-card__body">
+                                    <h3>Pharmacy-Focused</h3>
+                                    <p>Specialised solutions designed for pharmacies, from inventory management to patient engagement.</p>
+                                </div>
+                            </article>
+                            <article class="card why-card">
+                                <div class="why-card__media">
+                                    <img src="images/pharmacy-mgmt.jpeg" alt="Medicine bottles and pills" loading="lazy">
+                                </div>
+                                <div class="why-card__body">
+                                    <h3>Secure & Compliant</h3>
+                                    <p>GDPR-compliant solutions that prioritise patient data security and regulatory compliance.</p>
+                                </div>
+                            </article>
+                            <article class="card why-card">
+                                <div class="why-card__media">
+                                    <img src="images/cta-home.jpeg" alt="Person using microscope" loading="lazy">
+                                </div>
+                                <div class="why-card__body">
+                                    <h3>Innovative Technology</h3>
+                                    <p>Cutting-edge digital solutions that streamline operations and enhance patient care.</p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section services-section">
+                <div class="container">
+                    <div class="stack stack--loose">
+                        <div class="stack stack--tight">
+                            <h2 class="text-balance">Our Services</h2>
+                            <p class="text-muted text-pretty">Comprehensive solutions that streamline workflows, extend your reach, and grow your pharmacy.</p>
+                        </div>
+                        <div class="services-grid">
+                            <article class="service-tile">
+                                <div class="service-mockup">
+                                    <div class="service-mockup__frame">
+                                        <img src="images/pharmacy-mgmt.jpeg" alt="Pharmacy management system" loading="lazy">
+                                    </div>
+                                    <div class="service-mockup__chips">
+                                        <span class="service-mockup__chip" aria-hidden="true"></span>
+                                        <span class="service-mockup__chip" aria-hidden="true"></span>
+                                        <span class="service-mockup__chip" aria-hidden="true"></span>
+                                    </div>
+                                </div>
+                                <div class="service-tile__body">
+                                    <h3>Pharmacy Management</h3>
+                                    <p>Comprehensive solutions that handle everything from prescription processing to inventory control, streamlining your workflow.</p>
+                                    <a href="solutions.html" class="btn btn-secondary">Learn More →</a>
+                                </div>
+                            </article>
+                            <article class="service-tile">
+                                <div class="service-mockup">
+                                    <div class="service-mockup__frame">
+                                        <img src="images/telepharmacy.jpeg" alt="Telepharmacy consultation" loading="lazy">
+                                    </div>
+                                    <div class="service-mockup__chips">
+                                        <span class="service-mockup__chip" aria-hidden="true"></span>
+                                        <span class="service-mockup__chip" aria-hidden="true"></span>
+                                        <span class="service-mockup__chip" aria-hidden="true"></span>
+                                    </div>
+                                </div>
+                                <div class="service-tile__body">
+                                    <h3>Telepharmacy</h3>
+                                    <p>Connect with patients remotely through secure platforms that expand your reach and improve accessibility.</p>
+                                    <a href="solutions.html" class="btn btn-secondary">Learn More →</a>
+                                </div>
+                            </article>
+                            <article class="service-tile">
+                                <div class="service-mockup">
+                                    <div class="service-mockup__frame">
+                                        <img src="images/digital-marketing.jpeg" alt="Digital marketing analytics" loading="lazy">
+                                    </div>
+                                    <div class="service-mockup__chips">
+                                        <span class="service-mockup__chip" aria-hidden="true"></span>
+                                        <span class="service-mockup__chip" aria-hidden="true"></span>
+                                        <span class="service-mockup__chip" aria-hidden="true"></span>
+                                    </div>
+                                </div>
+                                <div class="service-tile__body">
+                                    <h3>Digital Marketing</h3>
+                                    <p>Targeted strategies designed specifically for healthcare providers to reach more patients in your community.</p>
+                                    <a href="marketing.html" class="btn btn-secondary">Learn More →</a>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section projects-section">
+                <div class="container">
+                    <div class="stack stack--loose">
+                        <div class="stack stack--tight">
+                            <h2 class="text-balance">Latest Projects</h2>
+                            <p class="text-muted text-pretty">A snapshot of digital healthcare experiences we’ve launched for forward-thinking partners across the industry.</p>
+                        </div>
+                        <div class="projects-grid">
+                            <article class="project-card">
+                                <img src="images/content-marketing.jpeg" alt="Pharmacy website displayed on laptop" loading="lazy">
+                                <div class="project-card__body">
+                                    <h3 class="project-card__title">Omnichannel Pharmacy Launch</h3>
+                                    <p class="project-card__caption">Unified patient journey combining automated refills, in-store pickup, and engagement campaigns.</p>
+                                </div>
+                            </article>
+                            <article class="project-card">
+                                <img src="images/patient-engagement.jpeg" alt="Healthcare team collaborating with tablet" loading="lazy">
+                                <div class="project-card__body">
+                                    <h3 class="project-card__title">Patient Engagement Portal</h3>
+                                    <p class="project-card__caption">Secure portal experience delivering care plans, adherence reminders, and telehealth access.</p>
+                                </div>
+                            </article>
+                            <article class="project-card">
+                                <img src="images/hero-marketing.jpeg" alt="Digital marketing analytics dashboard" loading="lazy">
+                                <div class="project-card__body">
+                                    <h3 class="project-card__title">Campaign Performance Suite</h3>
+                                    <p class="project-card__caption">Real-time analytics and automated reporting to optimise multi-location pharmacy outreach.</p>
+                                </div>
+                            </article>
+                            <article class="project-card">
+                                <img src="images/hero-solutions.jpeg" alt="Healthcare professional reviewing patient data" loading="lazy">
+                                <div class="project-card__body">
+                                    <h3 class="project-card__title">Clinical Decision Support</h3>
+                                    <p class="project-card__caption">AI-assisted recommendations that accelerate pharmacy consultations and improve outcomes.</p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section section--tight section--cta">
+                <div class="container container--cta">
+                    <div class="cta">
+                        <div class="cta__content">
+                            <span class="chip">Partner with Alpha Health Tech</span>
+                            <h2 class="text-balance">Ready to Transform Your Pharmacy?</h2>
+                            <p class="text-pretty">Join leading pharmacies who trust us to power their digital transformation.</p>
+                            <p class="text-pretty">Let us help you reach more patients and build a stronger presence in your community.</p>
+                            <div class="cluster">
+                                <a href="contact.html" class="btn btn-primary">Start Your Journey</a>
+                            </div>
+                        </div>
+                        <div class="cta__media">
+                            <img src="images/cta-home.jpeg" alt="Healthcare team collaboration" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer container">
+            <div class="site-footer__grid">
+                <div class="stack stack--tight">
+                    <div class="inline items-center">
+                        <img src="assets/logo-light-background.png" alt="Alpha Health Tech logo" class="site-brand__mark">
+                        
+                    </div>
+                    <p>Empowering healthcare providers with innovative technology solutions since 2013.</p>
+                </div>
+                <div class="stack stack--tight">
+                    <h4>Quick Links</h4>
+                    <ul class="site-footer__link-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="solutions.html">IT Services</a></li>
+                        <li><a href="marketing.html">Marketing</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="stack stack--tight">
+                    <h4>Contact Info</h4>
+                    <p>Let’s connect and discuss how we can help transform your healthcare organization.</p>
+                    <a href="contact.html" class="btn btn-secondary">Get In Touch</a>
+                </div>
+            </div>
+            <div class="site-footer__bottom">
+                <p>&copy; 2025 Alpha Health Tech. All rights reserved.</p>
+                <p class="text-small image-credits">Images by photographers on <a href="https://www.pexels.com" target="_blank" rel="noopener">Pexels</a></p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

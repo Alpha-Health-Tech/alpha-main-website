@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Alpha Health Tech</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/emblem-light-background.png" type="image/png">
+    <style>
+        .portfolio-grid {
+            display: grid;
+            gap: var(--space-4);
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        }
+
+        @media (min-width: 48rem) {
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 64rem) {
+            .portfolio-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .portfolio-card {
+            background: var(--bg-surface);
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(17, 24, 39, 0.08);
+            box-shadow: var(--shadow-1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+        }
+
+        .portfolio-card:hover,
+        .portfolio-card:focus-within {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-2);
+            border-color: rgba(17, 24, 39, 0.16);
+        }
+
+        .portfolio-card__media {
+            position: relative;
+            overflow: hidden;
+            background: var(--bg-subtle);
+            padding: var(--space-2);
+            border-radius: var(--radius-md);
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .portfolio-card__media img {
+            width: 100%;
+            height: auto;
+            border-radius: var(--radius-sm);
+            transition: transform var(--transition-slow);
+            background-color: var(--bg-surface);
+        }
+
+        .portfolio-card:hover .portfolio-card__media img {
+            transform: scale(1.05);
+        }
+
+        .portfolio-card__body {
+            padding: var(--space-4);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-3);
+            flex: 1;
+        }
+
+        .portfolio-card__content {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-2);
+            flex: 1;
+        }
+
+        .portfolio-card__title {
+            font-size: var(--font-size-h3);
+            font-weight: var(--font-weight-semibold);
+            color: var(--text-strong);
+            margin: 0;
+            letter-spacing: var(--letter-spacing-tight);
+        }
+
+        .portfolio-card__description {
+            color: var(--text-subtle);
+            margin: 0;
+        }
+
+        .portfolio-card__link {
+            align-self: flex-start;
+        }
+    </style>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <div class="site-wrapper">
+        <header class="site-header container">
+            <div class="site-header__bar">
+                <a class="site-brand" href="index.html">
+                    <img src="assets/logo-light-background.png" alt="Alpha Health Tech logo" class="site-brand__mark">
+                </a>
+                <nav class="site-nav" id="nav-menu" aria-label="Primary">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="solutions.html" class="nav-link" aria-label="IT Services">IT Services</a>
+                    <a href="marketing.html" class="nav-link">Marketing</a>
+                    <a href="portfolio.html" class="nav-link active">Portfolio</a>
+                </nav>
+                <div class="site-header__actions">
+                    <a href="contact.html" class="btn btn-primary">Get Started</a>
+                    <button type="button" class="site-nav__toggle hamburger" id="hamburger" aria-label="Toggle navigation">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main class="site-main" id="main-content">
+            <section class="section section--tight">
+                <div class="container">
+                    <div class="stack stack--loose">
+                        <div class="stack stack--tight text-center">
+                            <h1 class="text-balance">Our Portfolio</h1>
+                            <p class="lead text-pretty">Showcasing the pharmacy and healthcare websites we've built, delivering exceptional digital experiences that drive results.</p>
+                        </div>
+
+                        <div class="portfolio-grid">
+                            <article class="portfolio-card">
+                                <div class="portfolio-card__media">
+                                    <img src="portfolio/portfolio-sidley.png" alt="Sidley Pharmacy website screenshot" loading="lazy">
+                                </div>
+                                <div class="portfolio-card__body">
+                                    <div class="portfolio-card__content">
+                                        <h2 class="portfolio-card__title">Sidley Pharmacy</h2>
+                                        <p class="portfolio-card__description">Modern pharmacy website featuring online prescription services, health advice, and convenient appointment booking.</p>
+                                    </div>
+                                    <a href="https://sidleypharmacy.co.uk" target="_blank" rel="noopener noreferrer" class="btn btn-secondary portfolio-card__link">Visit Site →</a>
+                                </div>
+                            </article>
+
+                            <article class="portfolio-card">
+                                <div class="portfolio-card__media">
+                                    <img src="portfolio/portfolio-villagerise.png" alt="Village Rise Pharmacy website screenshot" loading="lazy">
+                                </div>
+                                <div class="portfolio-card__body">
+                                    <div class="portfolio-card__content">
+                                        <h2 class="portfolio-card__title">Village Rise Pharmacy</h2>
+                                        <p class="portfolio-card__description">Community-focused pharmacy platform with comprehensive health services and patient engagement tools.</p>
+                                    </div>
+                                    <a href="https://villagerisepharmacy.co.uk" target="_blank" rel="noopener noreferrer" class="btn btn-secondary portfolio-card__link">Visit Site →</a>
+                                </div>
+                            </article>
+
+                            <article class="portfolio-card">
+                                <div class="portfolio-card__media">
+                                    <img src="portfolio/portfolio-wiltshire.png" alt="Wiltshire Health Clinic website screenshot" loading="lazy">
+                                </div>
+                                <div class="portfolio-card__body">
+                                    <div class="portfolio-card__content">
+                                        <h2 class="portfolio-card__title">Wiltshire Health Clinic</h2>
+                                        <p class="portfolio-card__description">Comprehensive health clinic website offering travel vaccinations, health screenings, and wellness services.</p>
+                                    </div>
+                                    <a href="https://wiltshirehealthclinic.co.uk" target="_blank" rel="noopener noreferrer" class="btn btn-secondary portfolio-card__link">Visit Site →</a>
+                                </div>
+                            </article>
+
+                            <article class="portfolio-card">
+                                <div class="portfolio-card__media">
+                                    <img src="portfolio/portfolio-stmarys.png" alt="St Mary's Pharmacy website screenshot" loading="lazy">
+                                </div>
+                                <div class="portfolio-card__body">
+                                    <div class="portfolio-card__content">
+                                        <h2 class="portfolio-card__title">St Mary's Pharmacy</h2>
+                                        <p class="portfolio-card__description">Trusted community pharmacy providing prescription services, health consultations, and wellness support.</p>
+                                    </div>
+                                    <a href="https://stmarys-pharmacy.co.uk" target="_blank" rel="noopener noreferrer" class="btn btn-secondary portfolio-card__link">Visit Site →</a>
+                                </div>
+                            </article>
+
+                            <article class="portfolio-card">
+                                <div class="portfolio-card__media">
+                                    <img src="portfolio/portfolio-healthyu.png" alt="Healthy-U Pharmacy website screenshot" loading="lazy">
+                                </div>
+                                <div class="portfolio-card__body">
+                                    <div class="portfolio-card__content">
+                                        <h2 class="portfolio-card__title">Healthy-U Pharmacy</h2>
+                                        <p class="portfolio-card__description">Innovative pharmacy platform focused on preventive care, wellness programmes, and patient education.</p>
+                                    </div>
+                                    <a href="https://healthyupharmacy.co.uk" target="_blank" rel="noopener noreferrer" class="btn btn-secondary portfolio-card__link">Visit Site →</a>
+                                </div>
+                            </article>
+
+                            <article class="portfolio-card">
+                                <div class="portfolio-card__media">
+                                    <img src="portfolio/portfolio-solihulltravel.png" alt="Solihull Travel Clinic website screenshot" loading="lazy">
+                                </div>
+                                <div class="portfolio-card__body">
+                                    <div class="portfolio-card__content">
+                                        <h2 class="portfolio-card__title">Solihull Travel Clinic</h2>
+                                        <p class="portfolio-card__description">Specialist travel health clinic providing vaccinations, antimalarials, and comprehensive travel health advice.</p>
+                                    </div>
+                                    <a href="https://solihulltravelclinic.co.uk" target="_blank" rel="noopener noreferrer" class="btn btn-secondary portfolio-card__link">Visit Site →</a>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section section--tight section--cta">
+                <div class="container container--cta">
+                    <div class="cta">
+                        <div class="cta__content">
+                            <span class="chip">Partner with Alpha Health Tech</span>
+                            <h2 class="text-balance">Ready to Join Our Portfolio?</h2>
+                            <p class="text-pretty">Let us help you reach more patients and build a stronger presence in your community.</p>
+                            <div class="cluster">
+                                <a href="contact.html" class="btn btn-primary">Start Your Project</a>
+                            </div>
+                        </div>
+                        <div class="cta__media">
+                            <img src="images/cta-home.jpeg" alt="Healthcare team collaboration" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer container">
+            <div class="site-footer__grid">
+                <div class="stack stack--tight">
+                    <div class="inline items-center">
+                        <img src="assets/logo-light-background.png" alt="Alpha Health Tech logo" class="site-brand__mark">
+                        
+                    </div>
+                    <p>Empowering healthcare providers with innovative technology solutions since 2013.</p>
+                </div>
+                <div class="stack stack--tight">
+                    <h4>Quick Links</h4>
+                    <ul class="site-footer__link-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="solutions.html">IT Services</a></li>
+                        <li><a href="marketing.html">Marketing</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="stack stack--tight">
+                    <h4>Contact Info</h4>
+                    <p>Let's connect and discuss how we can help transform your healthcare organisation.</p>
+                    <a href="contact.html" class="btn btn-secondary">Get In Touch</a>
+                </div>
+            </div>
+            <div class="site-footer__bottom">
+                <p>&copy; 2025 Alpha Health Tech. All rights reserved.</p>
+                <p class="text-small image-credits">Images by photographers on <a href="https://www.pexels.com" target="_blank" rel="noopener">Pexels</a></p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
