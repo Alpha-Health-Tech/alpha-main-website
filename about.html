@@ -1,230 +1,188 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Alpha Health Tech</title>
-
-    <!-- Open Graph / Social Media Meta Tags -->
+    <title>About Alpha Health Tech | Pharmacy digital specialists since 2013</title>
+    <meta name="description" content="Alpha Health Tech is a small West Midlands studio building websites, marketing and technology for UK pharmacies and health clinics since 2013.">
+    <link rel="canonical" href="https://alphahealthtech.co.uk/about.html">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://alphahealthtech.co.uk/about.html">
-    <meta property="og:title" content="About Us - Alpha Health Tech">
-    <meta property="og:description" content="Empowering healthcare providers with innovative technology solutions since 2013.">
+    <meta property="og:title" content="About Alpha Health Tech | Pharmacy digital specialists since 2013">
+    <meta property="og:description" content="Alpha Health Tech is a small West Midlands studio building websites, marketing and technology for UK pharmacies and health clinics since 2013.">
     <meta property="og:image" content="https://alphahealthtech.co.uk/assets/logo-light-background.png">
-
-    <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://alphahealthtech.co.uk/about.html">
-    <meta name="twitter:title" content="About Us - Alpha Health Tech">
-    <meta name="twitter:description" content="Empowering healthcare providers with innovative technology solutions since 2013.">
-    <meta name="twitter:image" content="https://alphahealthtech.co.uk/assets/logo-light-background.png">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Source+Sans+3:wght@400;500;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="assets/emblem-light-background.png" type="image/png">
+    <link rel="icon" href="assets/favicon-64.png" type="image/png">
+    <style>
+        .values-grid{display:grid;grid-template-columns:1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden;margin-top:36px;}
+        @media (min-width:64rem){.values-grid{grid-template-columns:1fr 1fr;}}
+        .values-grid__item{background:var(--paper);padding:28px 32px;}
+        .values-grid__item h3{margin:0 0 8px;}
+        .values-grid__item p{margin:0;}
+        .about-hero__img,.about-story__img{display:block;width:100%;height:auto;border-radius:var(--r-sm);}
+        .about-stats.section{padding-block:clamp(24px,3vw,36px);}
+        .about-hero__note{margin:12px 6px 0;text-align:right;transform:rotate(-1.5deg);}
+        .about-pull.section{padding-block:clamp(36px,5vw,56px);}
+        .pull-line{font-family:var(--font-display);font-style:italic;font-weight:500;font-size:clamp(1.9rem,1.4rem + 2vw,2.9rem);line-height:1.15;color:var(--ink);text-align:center;margin:0;}
+    </style>
 </head>
 <body>
-    <a class="skip-link" href="#main-content">Skip to main content</a>
-    <div class="site-wrapper">
-        <header class="site-header container">
-            <div class="site-header__bar">
-                <a class="site-brand" href="index.html">
-                    <img src="assets/logo-light-background.png" alt="Alpha Health Tech logo" class="site-brand__mark">
-                </a>
-                <nav class="site-nav" id="nav-menu" aria-label="Primary">
-                    <a href="index.html" class="nav-link">Home</a>
-                    <a href="about.html" class="nav-link active">About</a>
-                    <a href="solutions.html" class="nav-link" aria-label="IT Services">IT Services</a>
-                    <a href="marketing.html" class="nav-link">Marketing</a>
-                    <a href="portfolio.html" class="nav-link">Portfolio</a>
-                </nav>
-                <div class="site-header__actions">
-                    <a href="contact.html" class="btn btn-primary">Get Started</a>
-                    <button type="button" class="site-nav__toggle hamburger" id="hamburger" aria-label="Toggle navigation">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                </div>
-            </div>
-        </header>
-
-        <main class="site-main" id="main-content">
-            <section class="section section--tight">
-                <div class="container">
-                    <div class="hero">
-                        <div class="hero__content">
-                            <span class="chip">Mission & Vision</span>
-                            <h1 class="text-balance">About Alpha Health Tech</h1>
-                            <p class="lead text-pretty">Empowering healthcare providers with innovative technology since 2013.</p>
-                            <div class="stack stack--tight">
-                                <p class="text-muted text-pretty">We build modern, compliant digital experiences that help pharmacies and healthcare providers operate with confidence in a rapidly evolving market.</p>
-                                <div class="cluster">
-                                    <span class="chip">Founded 2013</span>
-                                    <span class="chip">Nationwide Partnerships</span>
-                                </div>
-                            </div>
-                        </div>
-                        <figure class="hero__media border bg-surface shadow-2">
-                            <img src="images/hero-about.jpeg" alt="Various medicines and healthcare items" loading="lazy">
-                        </figure>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section py-8">
-                <div class="container">
-                    <div class="stack stack--loose">
-                        <div class="stack stack--tight">
-                            <span class="chip">Our Story</span>
-                            <h2 class="text-balance">Revolutionising Healthcare Through Technology</h2>
-                        </div>
-                        <div class="grid-auto-fit">
-                            <article class="media-card card">
-                                <div class="media-card__media rounded-lg border shadow-1">
-                                    <img src="images/about-founded.jpeg" alt="Healthcare technology innovation" loading="lazy">
-                                </div>
-                                <div class="media-card__body stack stack--tight">
-                                    <p>Founded in 2013, Alpha Health Tech began with a singular vision: to transform healthcare through innovative technology solutions. We recognised that pharmacies and healthcare providers needed better tools to thrive in a digital world.</p>
-                                    <p>Our journey started by understanding the unique challenges faced by pharmacies—from increasing competition and patient management to building a strong online presence.</p>
-                                </div>
-                            </article>
-                            <article class="media-card card">
-                                <div class="media-card__media rounded-lg border shadow-1">
-                                    <img src="images/about-mission.jpeg" alt="Team collaboration" loading="lazy">
-                                </div>
-                                <div class="media-card__body stack stack--tight">
-                                    <h3 class="m-0">Our Mission</h3>
-                                    <p>We created solutions that not only address these challenges but propel healthcare providers to the forefront of the digital age.</p>
-                                    <p>Today, we are proud partners to pharmacies and healthcare organizations nationwide, providing comprehensive digital solutions that drive success and improve patient outcomes.</p>
-                                </div>
-                            </article>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section py-8">
-                <div class="container">
-                    <div class="stack stack--loose">
-                        <div class="stack stack--tight">
-                            <span class="chip">What Guides Us</span>
-                            <h2>Our Values</h2>
-                            <p class="text-muted text-pretty">Guiding principles that ensure we deliver meaningful, secure, and innovative healthcare technology.</p>
-                        </div>
-                        <div class="challenges-grid">
-                            <article class="card card--subtle">
-                                <div class="stack stack--tight">
-                                    <h3>Healthcare-First</h3>
-                                    <p>Healthcare is about people, not just technology. Every solution we create is designed with patient care and provider efficiency in mind.</p>
-                                </div>
-                            </article>
-                            <article class="card card--subtle">
-                                <div class="stack stack--tight">
-                                    <h3>Security & Compliance</h3>
-                                    <p>Patient data security and GDPR compliance are at the core of everything we do. Your patients' information is always protected.</p>
-                                </div>
-                            </article>
-                            <article class="card card--subtle">
-                                <div class="stack stack--tight">
-                                    <h3>Innovation</h3>
-                                    <p>We continuously evolve our solutions to meet the changing needs of modern healthcare and improve patient outcomes.</p>
-                                </div>
-                            </article>
-                            <article class="card card--subtle">
-                                <div class="stack stack--tight">
-                                    <h3>Partnership</h3>
-                                    <p>We work closely with our clients as true partners, understanding their unique needs and providing personalised solutions.</p>
-                                </div>
-                            </article>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section py-8">
-                <div class="container">
-                    <div class="layout-with-rail">
-                        <article class="card stack stack--tight">
-                            <span class="chip">Team & Culture</span>
-                            <figure class="hero__media border shadow-2">
-                                <img src="images/team-culture.jpeg" alt="Alpha Health Tech team collaborating in a modern workspace" loading="lazy">
-                            </figure>
-                            <div class="stack stack--tight">
-                                <h2 class="text-balance">Collaboration That Keeps Patients at the Center</h2>
-                                <p>Alpha Health Tech brings together pharmacists, strategists, designers, and engineers to ensure every digital solution reflects real-world clinical workflows and patient needs.</p>
-                                <ul class="stack stack--tight visible-lg" role="list">
-                                    <li>Client partnerships built on transparency</li>
-                                    <li>Iterative delivery with measurable outcomes</li>
-                                    <li>Clinical insight in every product decision</li>
-                                </ul>
-                            </div>
-                        </article>
-                        <aside class="right-rail stack stack--tight">
-                            <h3 class="m-0">How We Work</h3>
-                            <p class="text-muted">Cross-functional teams pair healthcare expertise with creative problem solving to deliver lasting impact.</p>
-                            <ul class="stack stack--tight" role="list">
-                                <li>Client partnerships built on transparency</li>
-                                <li>Iterative delivery with measurable outcomes</li>
-                                <li>Clinical insight in every product decision</li>
-                            </ul>
-                        </aside>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section section--tight section--cta">
-                <div class="container container--cta">
-                    <div class="cta">
-                        <div class="cta__content">
-                            <span class="chip">Partner with healthcare innovators</span>
-                            <h2 class="text-balance">Ready to Partner with Us?</h2>
-                            <p class="text-pretty">Join leading pharmacies and healthcare providers who trust us to power their digital transformation.</p>
-                            <p class="text-pretty">Let us help you reach more patients and build a stronger presence in your community.</p>
-                            <div class="cluster">
-                                <a href="contact.html" class="btn btn-primary">Get Started</a>
-                            </div>
-                        </div>
-                        <div class="cta__media">
-                            <img src="images/cta-home.jpeg" alt="Healthcare innovation" loading="lazy">
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <footer class="site-footer container">
-            <div class="site-footer__grid">
-                <div class="stack stack--tight">
-                    <div class="inline items-center">
-                        <img src="assets/logo-light-background.png" alt="Alpha Health Tech logo" class="site-brand__mark">
-                        
-                    </div>
-                    <p>Empowering healthcare providers with innovative technology solutions since 2013.</p>
-                </div>
-                <div class="stack stack--tight">
-                    <h4>Quick Links</h4>
-                    <ul class="site-footer__link-list">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="solutions.html">IT Services</a></li>
-                        <li><a href="marketing.html">Marketing</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="stack stack--tight">
-                    <h4>Contact Info</h4>
-                    <p>Let's connect and discuss how we can help transform your healthcare organization.</p>
-                    <a href="contact.html" class="btn btn-secondary">Get In Touch</a>
-                </div>
-            </div>
-            <div class="site-footer__bottom">
-                <p>&copy; 2025 Alpha Health Tech. All rights reserved.</p>
-                <p class="text-small image-credits">Images by photographers on <a href="https://www.pexels.com" target="_blank" rel="noopener">Pexels</a></p>
-            </div>
-        </footer>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header">
+    <div class="container site-header__bar">
+        <a class="site-brand" href="index.html">
+            <img src="assets/logo-light-background.webp" alt="Alpha Health Tech" width="480" height="270">
+        </a>
+        <nav class="site-nav" id="nav-menu" aria-label="Primary">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="websites.html" class="nav-link">Websites</a>
+            <a href="marketing.html" class="nav-link">Marketing</a>
+            <a href="solutions.html" class="nav-link">Technology</a>
+            <a href="portfolio.html" class="nav-link">Our work</a>
+            <a href="about.html" class="nav-link active" aria-current="page">About</a>
+        </nav>
+        <div class="site-header__actions">
+            <a href="tel:+441675597003" class="site-header__phone">+44 1675 597003</a>
+            <a href="contact.html" class="btn btn-primary">Contact Us</a>
+            <button type="button" class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-controls="nav-menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        </div>
     </div>
+</header>
+<main id="main-content">
 
-    <script src="script.js"></script>
+    <section class="hero-band">
+        <div class="container split split--5-7">
+            <div>
+                <span class="eyebrow">About us</span>
+                <h1>A small team that knows pharmacy <span class="hl-mark">inside out</span>.</h1>
+                <p>Alpha Health Tech builds websites, marketing and technology for UK community pharmacies and health clinics — and nothing else. We have worked exclusively in healthcare since 2013, so we already understand your services, your patients and the rules you work within before the first call.</p>
+                <a href="contact.html" class="btn btn-primary">Book a free consultation</a>
+            </div>
+            <div>
+                <div class="media-mat">
+                    <img class="about-hero__img" src="images/img-team-table.webp" alt="People working together around a meeting table" width="1600" height="1067" fetchpriority="high">
+                </div>
+                <p class="annotation about-hero__note">Hampton-in-Arden, since 2013</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--wash about-stats">
+        <div class="container">
+            <div class="stat-row">
+                <div class="stat"><strong>2013</strong><span>Founded</span></div>
+                <div class="stat"><strong>120+</strong><span>Healthcare clients</span></div>
+                <div class="stat"><strong>1 day</strong><span>Reply to every enquiry</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container split split--7-5">
+            <div>
+                <span class="eyebrow">Our story</span>
+                <h2>Built in the West Midlands, grown by referral.</h2>
+                <p>We started in 2013 from Hampton-in-Arden, near Solihull, helping a handful of local pharmacies get a proper presence online. Most of our work since has come the same way pharmacy business does — one owner recommending us to another.</p>
+                <p>That referral pattern shaped how we operate. We keep the team small and senior, we are honest about what is worth doing and what is not, and we stay involved after launch — a pharmacy website needs updating every flu season, every travel season and every time an NHS service changes, and we are there for that.</p>
+                <p>Today we work with pharmacies and clinics across the UK, from single independents to small groups, always on the same footing: a free initial consultation, a fixed quote, and a reply within one business day.</p>
+            </div>
+            <div class="media-mat">
+                <img class="about-story__img" src="images/img-pharmacy-interior.webp" alt="Interior of a community pharmacy with stocked shelves" width="1600" height="1068" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--ruled about-pull">
+        <div class="container">
+            <p class="pull-line">Healthcare is all we do.</p>
+        </div>
+    </section>
+
+    <section class="section section--wash">
+        <div class="container">
+            <h2>Four things we hold ourselves to.</h2>
+            <div class="values-grid">
+                <div class="values-grid__item">
+                    <h3>Healthcare only</h3>
+                    <p>We do not build for restaurants or estate agents. Every project is a pharmacy or a clinic, so the lessons from one client benefit the next.</p>
+                </div>
+                <div class="values-grid__item">
+                    <h3>Straight answers</h3>
+                    <p>If something will not bring your pharmacy more bookings, we say so. You get honest advice and a fixed quote, not a menu of upsells.</p>
+                </div>
+                <div class="values-grid__item">
+                    <h3>Work you own</h3>
+                    <p>Your website, your domain, your content, your data. Nothing is locked to us, and we hand everything over cleanly if you ever move on.</p>
+                </div>
+                <div class="values-grid__item">
+                    <h3>There after launch</h3>
+                    <p>Websites go stale without care. We keep sites updated for new services, seasonal campaigns and NHS changes long after day one.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container split split--5-7">
+            <div>
+                <span class="eyebrow">How we work</span>
+                <h2>Plain English and a fixed price.</h2>
+            </div>
+            <div>
+                <ul class="check-list">
+                    <li>Every project starts with a free consultation — a conversation about your pharmacy, not a sales pitch.</li>
+                    <li>You get a written proposal with a fixed quote before any work begins, so the price you agree is the price you pay.</li>
+                    <li>We write in plain English and explain decisions in terms of patients and bookings, not jargon.</li>
+                    <li>We understand NHS service pages, Pharmacy First, travel clinics and repeat prescriptions from day one.</li>
+                    <li>We reply to every message within one business day, Monday to Friday, 9:00am to 5:30pm.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--dark band">
+        <div class="container split split--7-5">
+            <div>
+                <span class="eyebrow">Free consultation</span>
+                <h2>Work with a team that speaks pharmacy.</h2>
+                <p>Tell us where your pharmacy is now and where you want it to be.</p>
+            </div>
+            <div class="band__actions">
+                <a href="contact.html" class="btn btn-primary">Book a free consultation</a>
+                <a href="tel:+441675597003" class="btn btn-secondary">Call +44 1675 597003</a>
+            </div>
+        </div>
+    </section>
+
+</main>
+<footer class="site-footer">
+    <div class="container site-footer__grid">
+        <div>
+            <img src="assets/logo-dark-background.webp" alt="Alpha Health Tech" width="480" height="270">
+            <p>Websites, marketing and technology for UK pharmacies and clinics. Based in the West Midlands, working nationwide since 2013.</p>
+        </div>
+        <div>
+            <h4>Explore</h4>
+            <ul><li><a href="index.html">Home</a></li><li><a href="portfolio.html">Our work</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul>
+        </div>
+        <div>
+            <h4>Services</h4>
+            <ul><li><a href="websites.html">Pharmacy websites</a></li><li><a href="marketing.html">Digital marketing</a></li><li><a href="solutions.html">Technology &amp; support</a></li></ul>
+        </div>
+        <div>
+            <h4>Contact</h4>
+            <ul><li><a href="mailto:hello@alphahealthtech.co.uk">hello@alphahealthtech.co.uk</a></li><li><a href="tel:+441675597003">+44 1675 597003</a></li><li>48 Fentham Road, Hampton-in-Arden, B92 0AY</li><li>Monday to Friday, 9:00am – 5:30pm</li></ul>
+        </div>
+    </div>
+    <div class="container site-footer__bottom">
+        <p>&copy; 2026 Alpha Health Tech Ltd. All rights reserved.</p>
+        <p><a href="privacy.html">Privacy policy</a> · <a href="data-deletion.html">Data deletion</a></p>
+    </div>
+</footer>
+<script src="script.js"></script>
 </body>
 </html>
