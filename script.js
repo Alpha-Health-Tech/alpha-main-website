@@ -78,38 +78,4 @@ document.addEventListener('DOMContentLoaded', function () {
         target.focus({ preventScroll: true });
     });
 
-    /* Contact form: composes an email until the Zoho Forms embed replaces it */
-    var form = document.getElementById('contact-form');
-    if (form) {
-        form.addEventListener('submit', function (event) {
-            event.preventDefault();
-            var status = form.querySelector('.form__status');
-            var name = form.querySelector('#cf-name').value.trim();
-            var org = form.querySelector('#cf-org').value.trim();
-            var email = form.querySelector('#cf-email').value.trim();
-            var phone = form.querySelector('#cf-phone').value.trim();
-            var message = form.querySelector('#cf-message').value.trim();
-            if (!name || !email || !message) {
-                if (status) {
-                    status.textContent = 'Please fill in your name, email and message.';
-                    status.classList.add('is-error');
-                    status.classList.remove('is-success');
-                }
-                return;
-            }
-            var body = 'Name: ' + name + '\n' +
-                (org ? 'Pharmacy or clinic: ' + org + '\n' : '') +
-                'Email: ' + email + '\n' +
-                (phone ? 'Phone: ' + phone + '\n' : '') +
-                '\n' + message;
-            var subject = 'Website enquiry from ' + name + (org ? ' (' + org + ')' : '');
-            window.location.href = 'mailto:hello@alphahealthtech.co.uk?subject=' +
-                encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-            if (status) {
-                status.textContent = 'Opening your email app — or write to hello@alphahealthtech.co.uk directly.';
-                status.classList.add('is-success');
-                status.classList.remove('is-error');
-            }
-        });
-    }
 });
